@@ -40,7 +40,7 @@ import teamcode.vision.Vision;
 /**
  * This class implements auto-assist pickup pixel task.
  */
-public class TaskAutoPickupPixel extends TrcAutoTask<TaskAutoPickupPixel.State>
+public class TaskAutoPickupPixel extends TrcAutoTask <TaskAutoPickupPixel.State>
 {
     private static final String moduleName = TaskAutoPickupPixel.class.getSimpleName();
 
