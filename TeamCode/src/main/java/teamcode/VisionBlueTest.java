@@ -35,7 +35,7 @@ import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 import org.openftc.easyopencv.OpenCvWebcam;
 
-import java.util.Timer;
+//import java.util.Timer;
 import java.util.TimerTask;
 
 
@@ -44,12 +44,10 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "NessieBlueBackdrop-from kong" , group="Linear Opmode")
-
-//@Disabled
+@Autonomous(name = "NessieBlueBackdrop" , group="Linear Opmode")
 public class VisionBlueTest extends LinearOpMode {
     private ElapsedTime runtime = new ElapsedTime();
-    private Timer timer = new Timer();
+   // private Timer timer = new Timer();
     public DcMotor fL = null;
     public DcMotor fR = null;
     public DcMotor bL = null;
@@ -145,53 +143,17 @@ public class VisionBlueTest extends LinearOpMode {
             telemetry.addData("Analysis", pipeline.getAnalysis());
             telemetry.update();
 
-            if (pipeline.getAnalysis() == SpikeMarkPosition.UNO) {
-                // code for moving robot here
-                //iW.setPower(-1);
-                runtime.reset();
-                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
-                    bL.setPower(.5);
-                    bR.setPower(-.5);
-                }
-                runtime.reset();
-                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
+            if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
+//          code
 
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
-                    bL.setPower(-.5);
-                    bR.setPower(.5);
-
-                }
-            } else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS){
-                //iW.setPower(1);
-
-                runtime.reset();
-                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
-                    bL.setPower(.5);
-                    bR.setPower(-.5);
-        }
-                runtime.reset();
-                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
-
-                    fL.setPower(.5);
-                    fR.setPower(-.5);
-                    bL.setPower(.5);
-                    bR.setPower(-.5);
-
-                }
-            } else if (pipeline.getAnalysis() == SpikeMarkPosition.TRES){
+            } else if (pipeline.getAnalysis() == SpikeMarkPosition.UNO){
+                //code
 
 
-                fR.setPower(-.5);
-                bL.setPower(.5);
-                bR.setPower(-.5);
-                fL.setPower(.5);
+            } else if(pipeline.getAnalysis() == SpikeMarkPosition.TRES) {
+
+             //code
             }
-
             // Don't burn CPU cycles busy-looping in this sample
             sleep(5000);
             break;
