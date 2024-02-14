@@ -44,7 +44,7 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "NewKongBlueBackdrop" , group="Linear Opmode")
+@Autonomous(name = "NessieBlueBackdrop-from kong" , group="Linear Opmode")
 
 //@Disabled
 public class VisionBlueTest extends LinearOpMode {
@@ -68,7 +68,7 @@ public class VisionBlueTest extends LinearOpMode {
     private int timesAPressed = 0;
     private Servo PurplePixelDropper = null;
     OpenCvWebcam webcam;
-    RedTeamElementDeterminationPipeline pipeline;
+    BlueTeamElementDeterminationPipeline pipeline;
 
     @Override
     public void runOpMode()
@@ -147,11 +147,49 @@ public class VisionBlueTest extends LinearOpMode {
 
             if (pipeline.getAnalysis() == SpikeMarkPosition.UNO) {
                 // code for moving robot here
-                iW.setPower(-1);
+                //iW.setPower(-1);
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+                }
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
+
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
+
+                }
             } else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS){
-                iW.setPower(1);
+                //iW.setPower(1);
+
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+        }
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 1.05){//forward purple pixel
+
+                    fL.setPower(.5);
+                    fR.setPower(-.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+
+                }
             } else if (pipeline.getAnalysis() == SpikeMarkPosition.TRES){
-                iW.setPower(.5);
+
+
+                fR.setPower(-.5);
+                bL.setPower(.5);
+                bR.setPower(-.5);
+                fL.setPower(.5);
             }
 
             // Don't burn CPU cycles busy-looping in this sample
