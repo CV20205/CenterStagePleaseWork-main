@@ -50,7 +50,7 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "3 Nessie stacks :))")
+@Autonomous(name = "3 Blue Nessie stacks :))")
 //@Disabled
 public class NessieCanSeeBlue extends LinearOpMode {
     //  telemetry.addData("Status", "sInitialized");
@@ -77,7 +77,7 @@ public class NessieCanSeeBlue extends LinearOpMode {
     private int timesAPressed = 0;
     private Servo PurplePixelDropper = null;
     OpenCvWebcam webcam;
-    RedTeamElementDeterminationPipeline pipeline;
+    BlueTeamElementDeterminationPipeline pipeline;
 
     @Override
     public void runOpMode() {
@@ -126,7 +126,7 @@ public class NessieCanSeeBlue extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
         webcam = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, "Webcam 1"), cameraMonitorViewId);
-        pipeline = new RedTeamElementDeterminationPipeline();
+        pipeline = new BlueTeamElementDeterminationPipeline();
         webcam.setPipeline(pipeline);
 
         // We set the viewport policy to optimized view so the preview doesn't appear 90 deg
@@ -161,23 +161,26 @@ public class NessieCanSeeBlue extends LinearOpMode {
             if (pipeline.getAnalysis() == SpikeMarkPosition.UNO) {
 
 
-//          code
+//          code // under the brige truss thingy
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
-                }
-                runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.5) {// turn left
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < .565) {// forward
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.5) {
+                    sleep(10000);
+                }
                 while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
                     fL.setPower(0.5);
                     bL.setPower(0.5);
@@ -291,23 +294,25 @@ public class NessieCanSeeBlue extends LinearOpMode {
 
             } else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
 
-
+//              da moddle
                 //code
                 //code
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
-                }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.5) {// turn left
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < .5) {// forward
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
+                }
+
+
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
                     fL.setPower(0.5);
@@ -412,33 +417,62 @@ public class NessieCanSeeBlue extends LinearOpMode {
                         c2.setPosition(0.4);
                     }
                 }
+
+
+
+
+
             } else if(pipeline.getAnalysis() == SpikeMarkPosition.TRES) {
 
+
+
+
+
+                // the stack side
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.55) {// strafe left
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// turn left
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
+                while (opModeIsActive() && runtime.seconds() < .675) {// spin
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
+                }
+
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.39) {// forward
+                    fL.setPower(0.5);
+                    bL.setPower(0.5);
                     fR.setPower(0.5);
                     bR.setPower(0.5);
                 }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                    fL.setPower(0.);
+                    bL.setPower(0.);
+                    fR.setPower(0.);
+                    bR.setPower(0.);
                 }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 1.05) {// rollers
-                    cR.setPower(-0.5);
+                    iW.setPower(0.5);
+
+                }
+                while (opModeIsActive() && runtime.seconds() < 1.30) {
+                    fL.setPower(-0.5);
+                    bL.setPower(-0.5);
+                    fR.setPower(-0.5);
+                    bR.setPower(-0.5);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.5) {
+                    sleep(10000);
                 }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.5) {// back up
@@ -540,5 +574,5 @@ public class NessieCanSeeBlue extends LinearOpMode {
         }
 
 
-    }}
-//}
+    }
+}

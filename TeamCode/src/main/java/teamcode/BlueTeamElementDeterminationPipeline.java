@@ -268,7 +268,7 @@ public class BlueTeamElementDeterminationPipeline extends OpenCvPipeline
             case RIGHT:
                 return SpikeMarkPosition.TRES;
             default:
-               return SpikeMarkPosition.TRES;
+               return SpikeMarkPosition.UNO;
         }
     }
 }
