@@ -44,7 +44,7 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "NessieBlueBackdrop" , group="Linear Opmode")
+@Autonomous(name = "2 NessieBlueBackdrop" , group="Linear Opmode")
 public class VisionBlueTest extends LinearOpMode {
     private ElapsedTime runtime = new ElapsedTime();
    // private Timer timer = new Timer();
@@ -143,16 +143,76 @@ public class VisionBlueTest extends LinearOpMode {
             telemetry.addData("Analysis", pipeline.getAnalysis());
             telemetry.update();
 
-            if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
-//          code
 
-            } else if (pipeline.getAnalysis() == SpikeMarkPosition.UNO){
+
+            /// codeing here
+            if (pipeline.getAnalysis() == SpikeMarkPosition.UNO) {
+
+
+//          code
                 //code
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 0.5){// back purple
+                    fL.setPower(0.5);
+                    bL.setPower(-0.5);
+                    fR.setPower(-0.5);
+                    bR.setPower(0.5);
+                }
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 1.05){// back purple
+                    fL.setPower(0.5);
+                    bL.setPower(0.5);
+                    fR.setPower(-0.5);
+                    bR.setPower(-0.5);
+                }
+
+
+
+
+            } else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS){
+
+
+
+                //code
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 0.5){// back purple
+                    fL.setPower(0.5);
+                    bL.setPower(-0.5);
+                    fR.setPower(-0.5);
+                    bR.setPower(0.5);
+                }
+                runtime.reset();
+        while(opModeIsActive() && runtime.seconds() < 1.05){// back purple
+            fL.setPower(0.5);
+            bL.setPower(0.5);
+            fR.setPower(-0.5);
+            bR.setPower(-0.5);
+        }
+
+
 
 
             } else if(pipeline.getAnalysis() == SpikeMarkPosition.TRES) {
 
              //code
+
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 0.5){// back purple
+                    fL.setPower(0.5);
+                    bL.setPower(-0.5);
+                    fR.setPower(-0.5);
+                    bR.setPower(0.5);
+                }
+                runtime.reset();
+                while(opModeIsActive() && runtime.seconds() < 1.05){// back purple
+                    fL.setPower(0.5);
+                    bL.setPower(0.5);
+                    fR.setPower(-0.5);
+                    bR.setPower(-0.5);
+                }
+
+
+
             }
             // Don't burn CPU cycles busy-looping in this sample
             sleep(5000);

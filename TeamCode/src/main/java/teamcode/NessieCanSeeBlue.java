@@ -50,9 +50,9 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "1 NessieRedBackdrop")
+@Autonomous(name = "3 Nessie stacks :))")
 //@Disabled
-public class VisionRedTest extends LinearOpMode {
+public class NessieCanSeeBlue extends LinearOpMode {
     //  telemetry.addData("Status", "sInitialized");
     //     telemetry.update();
 
@@ -234,41 +234,41 @@ public class VisionRedTest extends LinearOpMode {
                     l2.setPosition(0);
                     c1.setPosition(0);
 
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.3);
-                    bL.setPower(0.3);
-                    fR.setPower(0.3);
-                    bR.setPower(0.3);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// open claw
-                    c2.setPosition(0.4);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// close claw
-                    c2.setPosition(0.0);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// backwards
-                    fL.setPower(-0.3);
-                    bL.setPower(-0.3);
-                    fR.setPower(-0.3);
-                    bR.setPower(-0.3);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// left
-                    fL.setPower(-0.3);
-                    bL.setPower(-0.3);
-                    fR.setPower(-0.3);
-                    bR.setPower(-0.3);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                    l1.setPosition(0.6);
-                    l2.setPosition(0);
-                    c1.setPosition(0);
-                }
+                    runtime.reset();
+                    while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
+                        fL.setPower(0.3);
+                        bL.setPower(0.3);
+                        fR.setPower(0.3);
+                        bR.setPower(0.3);
+                    }
+                    runtime.reset();
+                    while (opModeIsActive() && runtime.seconds() < 0.5) {// open claw
+                        c2.setPosition(0.4);
+                    }
+                    runtime.reset();
+                    while (opModeIsActive() && runtime.seconds() < 0.5) {// close claw
+                        c2.setPosition(0.0);
+                    }
+                    runtime.reset();
+                    while (opModeIsActive() && runtime.seconds() < 0.5) {// backwards
+                        fL.setPower(-0.3);
+                        bL.setPower(-0.3);
+                        fR.setPower(-0.3);
+                        bR.setPower(-0.3);
+                    }
+                    runtime.reset();
+                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left
+                        fL.setPower(-0.3);
+                        bL.setPower(-0.3);
+                        fR.setPower(-0.3);
+                        bR.setPower(-0.3);
+                    }
+                    runtime.reset();
+                    while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
+                        l1.setPosition(0.6);
+                        l2.setPosition(0);
+                        c1.setPosition(0);
+                    }
                     runtime.reset();
                     while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
                         fL.setPower(-0.3);
@@ -284,7 +284,7 @@ public class VisionRedTest extends LinearOpMode {
 
 
 
-            }
+                }
 
 
 
@@ -536,8 +536,8 @@ public class VisionRedTest extends LinearOpMode {
 
 
                 }
+            }
         }
-    }
 
 
     }}
