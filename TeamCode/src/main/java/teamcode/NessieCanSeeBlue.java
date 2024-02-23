@@ -50,7 +50,7 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "3 Blue Nessie stacks :))")
+@Autonomous(name = "Nessie Can See Blue Truss")
 //@Disabled
 public class NessieCanSeeBlue extends LinearOpMode {
     //  telemetry.addData("Status", "sInitialized");
@@ -161,106 +161,122 @@ public class NessieCanSeeBlue extends LinearOpMode {
             if (pipeline.getAnalysis() == SpikeMarkPosition.UNO) {
 
 
-//          code // under the brige truss thingy
+//          code // stacks
                 //code
-
+//                runtime.reset();
+//                while (opModeIsActive() && runtime.seconds() < 1.5) {// strafe left//12.64 1.5
+//                    iW.setPower(1);
+//                }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.55) {// strafe left
+                while (opModeIsActive() && runtime.seconds() < 1.85) {// strafe left//12.64 1.5
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1.5) {// spin //.675 for no more than 13.12
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
-                    bL.setPower(-.5);
-                    bR.setPower(.5);
-                }
-
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.9) {// strafe
+                while (opModeIsActive() && runtime.seconds() < 1.45) {// spin //1.9 for no more than 13.12 //1.7//12.64
                     fL.setPower(.5);
                     fR.setPower(-.5);
-                    bL.setPower(-.5);
-                    bR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.41) {// forward
+                while (opModeIsActive() && runtime.seconds() < 0.15) {// forward
                     fL.setPower(.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// stop
+                while (opModeIsActive() && runtime.seconds() < 0.3) {// stop
                     fL.setPower(0.);
                     bL.setPower(0.);
                     fR.setPower(0.);
                     bR.setPower(0.);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.41) {// backwad
+                while (opModeIsActive() && runtime.seconds() < 4.5) {// strafe left//12.64 1.5
+                    iW.setPower(1);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 1.5) {// strafe left//12.64 1.5
+                    iW.setPower(0);
+                }
+                runtime.reset();
+
+                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
                     fL.setPower(-.5);
                     fR.setPower(-.5);
                     bL.setPower(-.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.41) {// strafe back to the start
-                    fL.setPower(.5);
-                    fR.setPower(-.5);
-                    bL.setPower(-.5);
-                    bR.setPower(.5);
+                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
+                    fL.setPower(-.0);
+                    fR.setPower(-.0);
+                    bL.setPower(-.0);
+                    bR.setPower(-.0);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
+                    sleep(2000000);
                 }
 
+            }
 
-
-
-
-
-                } else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
+            else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
 
 //              da moddle
                 //code
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.55) {// strafe left
+                while (opModeIsActive() && runtime.seconds() < 0.65) {// strafe left
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .95) {// spin //.675 for no more than 13.12
+                while (opModeIsActive() && runtime.seconds() < .72) {// spin //.68 for no more than 13.46
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(-.5);
                     bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.75) {// strafe left
+                while (opModeIsActive() && runtime.seconds() < .54) {// forward
                     fL.setPower(.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.65) {// strafe left
+                while (opModeIsActive() && runtime.seconds() < 0.65) {// stop
                     fL.setPower(0.);
                     fR.setPower(0.);
                     bL.setPower(0.);
                     bR.setPower(0.);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.55) {// strafe left
+                while(opModeIsActive() && runtime.seconds() < 1.){
+                    iW.setPower(1);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.55) {// back
                     fL.setPower(-.5);
                     fR.setPower(-.5);
                     bL.setPower(-.5);
                     bR.setPower(-.5);
                 }
-
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < .34) {// spin //.68 for no more than 13.46
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
+                }
+                runtime.reset();
 
 
 
@@ -272,32 +288,26 @@ public class NessieCanSeeBlue extends LinearOpMode {
 
 
 
-                // the stack side
+                // under the truss thing
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.55) {// strafe left
+                while (opModeIsActive() && runtime.seconds() < 2.35) {// strafe left
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .65) {// spin //.675 for no more than 13.12
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
-                    bL.setPower(-.5);
-                    bR.setPower(.5);
-                }
+
 
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.41) {// forward
+                while (opModeIsActive() && runtime.seconds() < 0.14) {// forward
                     fL.setPower(0.5);
                     bL.setPower(0.5);
                     fR.setPower(0.5);
                     bR.setPower(0.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
+                while (opModeIsActive() && runtime.seconds() < 0.5) {// stop
                     fL.setPower(0.);
                     bL.setPower(0.);
                     fR.setPower(0.);
@@ -305,7 +315,7 @@ public class NessieCanSeeBlue extends LinearOpMode {
                 }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 1.05) {// rollers
-                    iW.setPower(0.5);
+                    iW.setPower(1.);
 
                 }
                 while (opModeIsActive() && runtime.seconds() < 1.30) {
@@ -314,18 +324,17 @@ public class NessieCanSeeBlue extends LinearOpMode {
                     fR.setPower(-0.5);
                     bR.setPower(-0.5);
                 }
+                while(opModeIsActive() && runtime.seconds() < 1.85) {
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+                }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.5) {
                     sleep(10000);
                 }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// back up
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(-0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
+
 
 
 

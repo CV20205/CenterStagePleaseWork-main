@@ -50,7 +50,7 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "4 NessieRedStacks :)")
+@Autonomous(name = "Nessie Can See Red Truss")
 //@Disabled
 public class NessieCanSeeRed extends LinearOpMode {
     //  telemetry.addData("Status", "sInitialized");
@@ -161,384 +161,189 @@ public class NessieCanSeeRed extends LinearOpMode {
             if (pipeline.getAnalysis() == SpikeMarkPosition.UNO) {
 
 
-//          code
+//          code // stacks
                 //code
+//                runtime.reset();
+//                while (opModeIsActive() && runtime.seconds() < 1.5) {// strafe left//12.64 1.5
+//                    iW.setPower(1);
+//                }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 1.85) {// strafe left//12.64 1.5
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// turn left
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 1.45) {// spin //1.9 for no more than 13.12 //1.7//12.64
+                    fL.setPower(.5);
+                    fR.setPower(-.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.15) {// forward
+                    fL.setPower(.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1.05) {// rollers
-                    cR.setPower(-0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.3) {// stop
+                    fL.setPower(0.);
+                    bL.setPower(0.);
+                    fR.setPower(0.);
+                    bR.setPower(0.);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// back up
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(-0.5);
-                    bR.setPower(-0.5);
+                while (opModeIsActive() && runtime.seconds() < 4.5) {// strafe left//12.64 1.5
+                    iW.setPower(1);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// strafe left
-                    fL.setPower(-0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(-0.5);
+                while (opModeIsActive() && runtime.seconds() < 1.5) {// strafe left//12.64 1.5
+                    iW.setPower(0);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.8) {// turn around
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(-0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// strafe left
-                    fL.setPower(-0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// arm up
-                    Rslide.setPower(0.5);
-                    Lslide.setPower(0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                    l1.setPosition(0.6);
-                    l2.setPosition(0);
-                    c1.setPosition(0);
 
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                        fL.setPower(0.3);
-                        bL.setPower(0.3);
-                        fR.setPower(0.3);
-                        bR.setPower(0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// open claw
-                        c2.setPosition(0.4);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// close claw
-                        c2.setPosition(0.0);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// backwards
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                        l1.setPosition(0.6);
-                        l2.setPosition(0);
-                        c1.setPosition(0);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
-                        c2.setPosition(0.4);
-                    }
-
-
-
+                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
+                    fL.setPower(-.5);
+                    fR.setPower(-.5);
+                    bL.setPower(-.5);
+                    bR.setPower(-.5);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
+                    fL.setPower(-.0);
+                    fR.setPower(-.0);
+                    bL.setPower(-.0);
+                    bR.setPower(-.0);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
+                sleep(2000000);
+                }
 
                 }
 
+             else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
 
-
-
-            } else if (pipeline.getAnalysis() == SpikeMarkPosition.DOS) {
-
-
+//              da moddle
                 //code
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.65) {// strafe left
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// turn left
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < .72) {// spin //.68 for no more than 13.46
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < .54) {// forward
+                    fL.setPower(.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1.05) {// rollers
-                    cR.setPower(-0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.65) {// stop
+                    fL.setPower(0.);
+                    fR.setPower(0.);
+                    bL.setPower(0.);
+                    bR.setPower(0.);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// back up
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(-0.5);
-                    bR.setPower(-0.5);
+                while(opModeIsActive() && runtime.seconds() < 1.){
+                    iW.setPower(1);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// strafe left
-                    fL.setPower(-0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(-0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.55) {// back
+                    fL.setPower(-.5);
+                    fR.setPower(-.5);
+                    bL.setPower(-.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < .34) {// spin //.68 for no more than 13.46
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(-.5);
+                    bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.8) {// turn around
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(-0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// strafe left
-                    fL.setPower(-0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// arm up
-                    Rslide.setPower(0.5);
-                    Lslide.setPower(0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                    l1.setPosition(0.6);
-                    l2.setPosition(0);
-                    c1.setPosition(0);
 
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                        fL.setPower(0.3);
-                        bL.setPower(0.3);
-                        fR.setPower(0.3);
-                        bR.setPower(0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// open claw
-                        c2.setPosition(0.4);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// close claw
-                        c2.setPosition(0.0);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// backwards
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                        l1.setPosition(0.6);
-                        l2.setPosition(0);
-                        c1.setPosition(0);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
-                        c2.setPosition(0.4);
-                    }
-                }
+
+
+
+
             } else if(pipeline.getAnalysis() == SpikeMarkPosition.TRES) {
 
+
+
+
+
+                // under the truss thing
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1) {// forward
+                while (opModeIsActive() && runtime.seconds() < 2.35) {// strafe left
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+                }
+
+
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.14) {// forward
                     fL.setPower(0.5);
                     bL.setPower(0.5);
                     fR.setPower(0.5);
                     bR.setPower(0.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// turn left
-                    fL.setPower(-0.5);
-                    bL.setPower(-0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.5) {// stop
+                    fL.setPower(0.);
+                    bL.setPower(0.);
+                    fR.setPower(0.);
+                    bR.setPower(0.);
                 }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 1.05) {// rollers
-                    cR.setPower(-0.5);
+                    iW.setPower(1.);
+
                 }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// back up
+                while (opModeIsActive() && runtime.seconds() < 1.30) {
                     fL.setPower(-0.5);
                     bL.setPower(-0.5);
                     fR.setPower(-0.5);
                     bR.setPower(-0.5);
                 }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// strafe left
-                    fL.setPower(-0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(-0.5);
+                while(opModeIsActive() && runtime.seconds() < 1.85) {
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(0.5);
+                while (opModeIsActive() && runtime.seconds() < 0.5) {
+                    sleep(10000);
                 }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.8) {// turn around
-                    fL.setPower(0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(-0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// strafe left
-                    fL.setPower(-0.5);
-                    bL.setPower(0.5);
-                    fR.setPower(0.5);
-                    bR.setPower(-0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// arm up
-                    Rslide.setPower(0.5);
-                    Lslide.setPower(0.5);
-                }
-                runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                    l1.setPosition(0.6);
-                    l2.setPosition(0);
-                    c1.setPosition(0);
-
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// forward
-                        fL.setPower(0.3);
-                        bL.setPower(0.3);
-                        fR.setPower(0.3);
-                        bR.setPower(0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// open claw
-                        c2.setPosition(0.4);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// close claw
-                        c2.setPosition(0.0);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// backwards
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// claw flip
-                        l1.setPosition(0.6);
-                        l2.setPosition(0);
-                        c1.setPosition(0);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
-                        fL.setPower(-0.3);
-                        bL.setPower(-0.3);
-                        fR.setPower(-0.3);
-                        bR.setPower(-0.3);
-                    }
-                    runtime.reset();
-                    while (opModeIsActive() && runtime.seconds() < 0.5) {// left / back?
-                        c2.setPosition(0.4);
-                    }
 
 
 
-                }
+
+
+
             }
         }
 
 
-    }}
-//}
+    }
+}
+
