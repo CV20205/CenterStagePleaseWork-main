@@ -169,8 +169,8 @@ public class NessieCanSeeRed extends LinearOpMode {
 //                }
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 1.85) {// strafe left//12.64 1.5
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
+                    fL.setPower(-.525);
+                    fR.setPower(.525);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
@@ -219,7 +219,7 @@ public class NessieCanSeeRed extends LinearOpMode {
                     bR.setPower(-.0);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.12) {// back
+                while (opModeIsActive() && runtime.seconds() < 200000000) {// back
                 sleep(2000000);
                 }
 
@@ -232,20 +232,20 @@ public class NessieCanSeeRed extends LinearOpMode {
                 //code
                 runtime.reset();
                 while (opModeIsActive() && runtime.seconds() < 0.7) {// strafe left// 0.65//13.05 below // if robot at home +2 to fl's
-                    fL.setPower(-.7);
-                    fR.setPower(.7);
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .72) {// spin // .72// 13.05 below 1.0
+                while (opModeIsActive() && runtime.seconds() < .8) {// spin // .72//
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(-.5);
                     bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .69) {// forward //.54// 13.05 below 85
+                while (opModeIsActive() && runtime.seconds() < .55) {// forward //.54// 13.05 below 85
                     fL.setPower(.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
@@ -300,7 +300,7 @@ public class NessieCanSeeRed extends LinearOpMode {
                     sleep(500);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .90) {// spin // looking for a variable// 13.05 below 1.0
+                while (opModeIsActive() && runtime.seconds() < .80) {// spin // looking for a variable// 13.05 below 1.0
                     fL.setPower(.5);
                     fR.setPower(-.5);
                     bL.setPower(.5);
@@ -335,8 +335,8 @@ public class NessieCanSeeRed extends LinearOpMode {
                 // under the truss thing
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 2.35) {// strafe left
-                    fL.setPower(-.5);
+                while (opModeIsActive() && runtime.seconds() < 2.65) {// strafe left
+                    fL.setPower(-.55);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
@@ -344,7 +344,7 @@ public class NessieCanSeeRed extends LinearOpMode {
 
 
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.14) {// forward
+                while (opModeIsActive() && runtime.seconds() < 0.2) {// forward
                     fL.setPower(0.5);
                     bL.setPower(0.5);
                     fR.setPower(0.5);
@@ -375,8 +375,8 @@ public class NessieCanSeeRed extends LinearOpMode {
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.5) {
-                    sleep(10000);
+                while (opModeIsActive() && runtime.seconds() < 200000000) {
+                    sleep(200000000);
                 }
 
 
