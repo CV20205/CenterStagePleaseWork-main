@@ -50,7 +50,7 @@ import java.util.TimerTask;
  * 100% accurate) method of detecting the TeamElement when lined up with
  * the sample regions over the first 3 stones.
  */
-@Autonomous(name = "Nessie Can See Blue Truss")
+@Autonomous(name = "Nessie Can See Blue stack")
 //@Disabled
 public class NessieCanSeeBlue extends LinearOpMode {
     //  telemetry.addData("Status", "sInitialized");
@@ -168,21 +168,21 @@ public class NessieCanSeeBlue extends LinearOpMode {
 //                    iW.setPower(1);
 //                }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1.85) {// strafe left//12.64 1.5
+                while (opModeIsActive() && runtime.seconds() < 1.70) {// strafe left//12.64 1.5
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 1.45) {// spin //1.9 for no more than 13.12 //1.7//12.64
+                while (opModeIsActive() && runtime.seconds() < 1.4) {// spin //1.9 for no more than
                     fL.setPower(.5);
                     fR.setPower(-.5);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.15) {// forward
+                while (opModeIsActive() && runtime.seconds() < 0.35) {// forward
                     fL.setPower(.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
@@ -288,19 +288,20 @@ public class NessieCanSeeBlue extends LinearOpMode {
 
 
 
-                // under the truss thing
+                // stucs
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 2.35) {// strafe left
+                while (opModeIsActive() && runtime.seconds() < 2.25) {// strafe left
                     fL.setPower(-.5);
                     fR.setPower(.5);
-                    bL.setPower(.5);
-                    bR.setPower(-.5);
+                    bL.setPower(.42);
+                    bR.setPower(-.42);
+
                 }
 
 
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.14) {// forward
+                while (opModeIsActive() && runtime.seconds() < 0.04) {// forward
                     fL.setPower(0.5);
                     bL.setPower(0.5);
                     fR.setPower(0.5);

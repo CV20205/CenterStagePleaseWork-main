@@ -231,55 +231,99 @@ public class NessieCanSeeRed extends LinearOpMode {
                 //code
                 //code
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.65) {// strafe left
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
+                while (opModeIsActive() && runtime.seconds() < 0.7) {// strafe left// 0.65//13.05 below // if robot at home +2 to fl's
+                    fL.setPower(-.7);
+                    fR.setPower(.7);
                     bL.setPower(.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .72) {// spin //.68 for no more than 13.46
+                while (opModeIsActive() && runtime.seconds() < .72) {// spin // .72// 13.05 below 1.0
                     fL.setPower(-.5);
                     fR.setPower(.5);
                     bL.setPower(-.5);
                     bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .54) {// forward
+                while (opModeIsActive() && runtime.seconds() < .69) {// forward //.54// 13.05 below 85
                     fL.setPower(.5);
                     fR.setPower(.5);
                     bL.setPower(.5);
                     bR.setPower(.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.65) {// stop
+                while (opModeIsActive() && runtime.seconds() < 0.05) {// stop
                     fL.setPower(0.);
                     fR.setPower(0.);
                     bL.setPower(0.);
                     bR.setPower(0.);
                 }
                 runtime.reset();
-                while(opModeIsActive() && runtime.seconds() < 1.){
+                while (opModeIsActive() && runtime.seconds() < 1.) {
                     iW.setPower(1);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < 0.55) {// back
+                while (opModeIsActive() && runtime.seconds() < 0.7) {// back //.55//13.05 below .25
                     fL.setPower(-.5);
                     fR.setPower(-.5);
                     bL.setPower(-.5);
                     bR.setPower(-.5);
                 }
                 runtime.reset();
-                while (opModeIsActive() && runtime.seconds() < .34) {// spin //.68 for no more than 13.46
-                    fL.setPower(-.5);
-                    fR.setPower(.5);
-                    bL.setPower(-.5);
-                    bR.setPower(.5);
+                while (opModeIsActive() && runtime.seconds() < .01) {
+                    iW.setPower(0);
                 }
                 runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 1.75) {// strafe //.34//.68 for no more than 13.05 less .84
 
-
-
+                    fL.setPower(-.5);
+                    fR.setPower(.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < .72) {// forward // .72// 13.05 below 1.0
+                    fL.setPower(.50);
+                    fR.setPower(.50);
+                    bL.setPower(.50);
+                    bR.setPower(.50);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.05) {// stop
+                    fL.setPower(0.);
+                    fR.setPower(0.);
+                    bL.setPower(0.);
+                    bR.setPower(0.);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 0.5){
+                    sleep(500);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < .90) {// spin // looking for a variable// 13.05 below 1.0
+                    fL.setPower(.5);
+                    fR.setPower(-.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 1){
+                fL.setPower(.5);
+                fR.setPower(.5);
+                bL.setPower(.5);
+                bR.setPower(.5);
+            }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < .65) {// spin // looking for a variable// 13.05 below 1.0
+                    fL.setPower(.5);
+                    fR.setPower(-.5);
+                    bL.setPower(.5);
+                    bR.setPower(-.5);
+                }
+                runtime.reset();
+                while (opModeIsActive() && runtime.seconds() < 20000){
+                    sleep(2000000000);
+                }
 
 
             } else if(pipeline.getAnalysis() == SpikeMarkPosition.TRES) {
